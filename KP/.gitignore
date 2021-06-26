@@ -1,0 +1,16 @@
+/node_modules
+/public/hot
+/public/upload_bukti_pembayaran/*
+/public/upload_products/*
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+node_modules
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+KP/composer.lock
