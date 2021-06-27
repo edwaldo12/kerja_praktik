@@ -40,7 +40,7 @@
                                 <a class="main-btn" href="{{ route('product.details', ['id' => $produk->id]) }}"><i
                                         class="">Detail</i></a>
                                 <p style="text-align: center;font-family: 'Poppins Light';font-style: italic">
-                                    {{ $produk->deskripsi }}</p>
+                                    {{ $produk->nama_produk }}</p>
                             </div>
                         </div>
                     @endforeach
