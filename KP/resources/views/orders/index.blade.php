@@ -22,6 +22,7 @@
                                 <tr>
                                     <th>ID Transaksi</th>
                                     <th>Nama Pelanggan</th>
+                                    <th>Tanggal Transaksi</th>
                                     <th>Nomor Telepon Pelanggan</th>
                                     <th>Bukti Pembayaran</th>
                                     <th>Alamat</th>
@@ -35,7 +36,10 @@
                                     <tr style="{{ $order->is_product_deleted ? 'color:red' : 'color:black' }}">
                                         <td style="color:inherit">ID-{{ sprintf('%04d', $order->id) }}</td>
                                         <td style="color:inherit">{{ $order->customer->name }}</td>
-                                        <td style="color:inherit">{{ $order->nomor_telepon_pemesan }}</td>
+                                        <td style="color:inherit">
+                                            {{ substr($order->created_at, 8, 2) }}-{{ substr($order->created_at, 5, 2) }}-{{ substr($order->created_at, 0, 4) }}
+                                        </td>
+                                        <td style="color:inherit">0{{ $order->nomor_telepon_pemesan }}</td>
                                         <td>
                                             <img class="img-thumbnail" width="100" style="max-height: 75px;"
                                                 src="{{ url('upload_bukti_pembayaran/' . $order->upload_file) }}"
