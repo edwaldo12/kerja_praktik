@@ -40,6 +40,7 @@
                                 <input type="file" class="btn btn-sm btn-secondary" style="padding: 7px;" name="upload_file"
                                     id="upload_file" value="{{ old('foto') }}">
                                 <button type="submit" class="btn btn-sm btn-success" style="padding: 10px;">Upload</button>
+                                <p style="text-align: center; margin-right: 100px; color: red">Ukuran file max. 4MB</p>
                             </div>
                         </div>
                         <small class="text-danger">{{ $errors->first('upload_file') }}</small>
