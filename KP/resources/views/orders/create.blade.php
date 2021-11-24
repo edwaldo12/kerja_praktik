@@ -303,7 +303,6 @@
             });
             return stock;
         }
-
     </script>
 
 @endsection
