@@ -7,13 +7,13 @@
         <div class="page-body clearfix">
 
             {{-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Grafik Penjualan Perbulan</div>
-                <div class="panel-body">
-                    <div id="bar_chart"></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Grafik Penjualan Perbulan</div>
+                    <div class="panel-body">
+                        <div id="bar_chart"></div>
+                    </div>
                 </div>
-            </div>
-        </div> --}}
+            </div> --}}
 
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -79,16 +79,19 @@
     </section>
 @endsection
 
-{{-- @push('grafik')
+@push('grafik')
     <script>
-        $(function(){
+        $(function() {
             var pesanan_perbulan = [];
             $.ajax({
-                "url" : "{{ url('pesanan_perbulan') }}",
-                "type" : "GET",
-                "success" : function(result){
-                    for(i = 0;i<result.length;i++){
-                        pesanan_perbulan.push({y : result[i].nama_produk, a : result[i].pesanan});
+                "url": "{{ url('pesanan_perbulan') }}",
+                "type": "GET",
+                "success": function(result) {
+                    for (i = 0; i < result.length; i++) {
+                        pesanan_perbulan.push({
+                            y: result[i].nama_produk,
+                            a: result[i].pesanan
+                        });
                     }
                     Morris.Bar({
                         element: 'bar_chart',
@@ -102,7 +105,7 @@
             });
         })
     </script>
-@endpush --}}
+@endpush
 
 
 @push('omset_penjualan')
@@ -147,6 +150,5 @@
                 });
             }
         })
-
     </script>
 @endpush

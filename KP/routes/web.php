@@ -54,7 +54,7 @@ Route::group(['middleware' => 'revalidate'], function () {
             Auth::logout();
             return Redirect::to('login');
         });
-        // Route::get('pesanan_perbulan', 'DashboardController@pesanan_perbulan');
+        Route::get('pesanan_perbulan', 'DashboardController@pesanan_perbulan');
     });
 });
 

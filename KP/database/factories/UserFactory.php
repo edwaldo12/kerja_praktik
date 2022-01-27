@@ -4,6 +4,7 @@
 
 use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /*
@@ -21,7 +22,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => 'Admin',
         'username' => 'Admin',
-        'password' => '$2y$12$sCQAbtxK3wQRs6g.3cDus.WEGI8oYHeUK8wZL8Y5H8fbMfWGSRZei',
+        'password' => Hash::make('admin'),
         'jenis_kelamin' => 'L',
         'alamat' => 'Jalan Pangeran Sakti No.23',
         'tanggal_lahir' => '2000-05-05',
