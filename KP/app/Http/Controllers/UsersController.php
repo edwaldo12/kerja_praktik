@@ -114,9 +114,9 @@ class UsersController extends Controller
         Session::flash('edit', $user->save());
         return redirect()->route('users.index')->with('Status', 'Data User Berhasil Diubah');
     }
-    public function activateUser(Request $request,$id)
+    public function activateUser(Request $request, $id)
     {
-        $user = DB::table('users')->where("id",$id)->update(['deleted_at' => NULL]);
+        $user = DB::table('users')->where("id", $id)->update(['deleted_at' => NULL]);
         Session::flash('edit', $user);
         return redirect()->route('users.index')->with('Status', 'User berhasil di-aktifkan!');
     }
@@ -131,5 +131,10 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')->with('Status', 'Data User Berhasil di non-aktifkan');
+    }
+
+    public function loginPage()
+    {
+        return view('auth/login');
     }
 }

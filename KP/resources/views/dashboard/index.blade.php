@@ -6,15 +6,6 @@
     <section class="content">
         <div class="page-body clearfix">
 
-            {{-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Grafik Penjualan Perbulan</div>
-                    <div class="panel-body">
-                        <div id="bar_chart"></div>
-                    </div>
-                </div>
-            </div> --}}
-
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box infobox-type-5 hover-expand-effect">
@@ -73,6 +64,17 @@
                     </div>
                 </div>
                 <!-- #END# Line Chart -->
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Grafik Penjualan Perbulan</div>
+                        <div class="panel-body">
+                            <div id="bar_chart"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
