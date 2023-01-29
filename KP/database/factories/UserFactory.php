@@ -3,7 +3,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
-use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -18,15 +17,15 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
-    return [
-        'name' => 'Admin',
-        'username' => 'Admin',
-        'password' => Hash::make('admin'),
-        'jenis_kelamin' => 'L',
-        'alamat' => 'Jalan Pangeran Sakti No.23',
-        'tanggal_lahir' => '2000-05-05',
-        'email' => 'admin@gmail.com',
-        'jabatan' => '1'
-    ];
-});
+// $factory->define(User::class, function (Faker $faker) {
+//     return [
+//         'name' => 'Admin',
+//         'username' => 'Admin',
+//         'password' => Hash::make('admin'),
+//         'jenis_kelamin' => 'L',
+//         'alamat' => 'Jalan Pangeran Sakti No.23',
+//         'tanggal_lahir' => '2000-05-05',
+//         'email' => 'admin@gmail.com',
+//         'jabatan' => '1'
+//     ];
+// });

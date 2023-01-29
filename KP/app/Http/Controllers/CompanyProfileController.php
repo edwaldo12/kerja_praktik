@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use PhpParser\Node\Stmt\Foreach_;
 
 class CompanyProfileController extends Controller
 {
