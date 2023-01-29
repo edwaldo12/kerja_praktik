@@ -135,14 +135,14 @@
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="{{ url('resource/adminbsb/admin_bsb/assets/images/avatars/face2.jpg') }}"
                                         alt="User Avatar" />
-                                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                                    {{-- <span class="hidden-xs">{{ Auth::user()->name }}</span> --}}
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="header">
                                         <img src="{{ url('resource/adminbsb/admin_bsb/assets/images/avatars/face2.jpg') }}"
                                             alt="User Avatar" />
                                         <div class="user">
-                                            {{ Auth::user()->name }}
+                                            {{-- {{ Auth::user()->name }} --}}
                                             <div class="title">Admin Sinar Sanata</div>
                                         </div>
                                     </li>

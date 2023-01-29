@@ -15,52 +15,49 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/test123', function () {
-// $customer = DB::table('customers')->find(12);
-//     $customer = Customer::find(12);
-//     dd($customer);
-// });
 
-Auth::routes();
+// Auth::routes();
 
+Route::get('/login', 'UsersController@loginPage');
 Route::group(['middleware' => 'revalidate'], function () {
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('/dashboard', 'DashboardController@index');
-        Route::resource('/users', 'UsersController');
-        Route::resource('/agendas', 'AgendasController');
-        Route::resource('/products', 'ProductsController');
-        Route::put('/products/activate/{id}', 'ProductsController@activateProduct')->name('products.activate');
-        Route::resource('/orders', 'OrdersController');
-        Route::get('/orders/updateOrder/{id}', 'OrdersController@confirmAdmin')->name('orders.updateStatus');
-        Route::get('/orders/processOrder/{id}', 'OrdersController@processOrders')->name('orders.processOrder');
-        Route::get('/orders/onDelivery/{id}', 'OrdersController@onDelivery')->name('orders.onDelivery');
-        Route::get('/orders/confirm/{id}', 'OrdersController@confirm')->name('orders.confirm');
-        Route::get('/orders/dibatalkan/{id}', 'OrdersController@hapusPesananUser')->name('orders.hapusPesananUser');
-        Route::resource('/dashboard', 'DashboardController');
-        Route::resource('/reviews', 'ReviewsController');
-        Route::resource('/customers', 'CustomersController');
-        Route::put('/customer/activate/{id}', 'CustomersController@activate')->name('customer.activate');
-        Route::put('/customer/useractive/{id}', 'UsersController@activateUser')->name('user.activate');
-        Route::get('/halaman.edit.pelanggan/{customer}', 'CustomersController@edit')->name(
-            'halaman.edit.pelanggan'
-        );
-        Route::put('/ubah.pelanggan/{customer}', 'CustomersController@update')->name('ubah.pelanggan');
-        Route::get('/checkStock/{id}', 'OrdersController@checkStock');
-        Route::get('/test', 'OrdersController@store');
-        Route::get('/getDetailOrder/{id}', 'DashboardController@getDetailOrder');
-        Route::get('/getAllProduct', 'DashboardController@get_product');
-        Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('/logout', function () {
-            Auth::logout();
-            return Redirect::to('login');
-        });
-        Route::get('pesanan_perbulan', 'DashboardController@pesanan_perbulan');
+    // Route::group(['middleware' => 'auth'], function () {
+    Route::get('/login', 'UsersController@loginPage');
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::resource('/users', 'UsersController');
+    Route::resource('/agendas', 'AgendasController');
+    Route::resource('/products', 'ProductsController');
+    Route::put('/products/activate/{id}', 'ProductsController@activateProduct')->name('products.activate');
+    Route::resource('/orders', 'OrdersController');
+    Route::get('/orders/updateOrder/{id}', 'OrdersController@confirmAdmin')->name('orders.updateStatus');
+    Route::get('/orders/processOrder/{id}', 'OrdersController@processOrders')->name('orders.processOrder');
+    Route::get('/orders/onDelivery/{id}', 'OrdersController@onDelivery')->name('orders.onDelivery');
+    Route::get('/orders/confirm/{id}', 'OrdersController@confirm')->name('orders.confirm');
+    Route::get('/orders/dibatalkan/{id}', 'OrdersController@hapusPesananUser')->name('orders.hapusPesananUser');
+    Route::resource('/dashboard', 'DashboardController');
+    Route::resource('/reviews', 'ReviewsController');
+    Route::resource('/customers', 'CustomersController');
+    Route::put('/customer/activate/{id}', 'CustomersController@activate')->name('customer.activate');
+    Route::put('/customer/useractive/{id}', 'UsersController@activateUser')->name('user.activate');
+    Route::get('/halaman.edit.pelanggan/{customer}', 'CustomersController@edit')->name(
+        'halaman.edit.pelanggan'
+    );
+    Route::put('/ubah.pelanggan/{customer}', 'CustomersController@update')->name('ubah.pelanggan');
+    Route::get('/checkStock/{id}', 'OrdersController@checkStock');
+    Route::get('/test', 'OrdersController@store');
+    Route::get('/getDetailOrder/{id}', 'DashboardController@getDetailOrder');
+    Route::get('/getAllProduct', 'DashboardController@get_product');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/logout', function () {
+        // Auth::logout();
+        // return Redirect::to('login');
+        Route::get('login', 'UsersController@loginPage');
     });
+    Route::get('pesanan_perbulan', 'DashboardController@pesanan_perbulan');
+    // });
 });
 
 
 Route::get('omset_bulanan', 'DashboardController@omset_bulanan');
-
 
 
 Route::group(['middleware' => 'revalidate'], function () {
